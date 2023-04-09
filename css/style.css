@@ -30,14 +30,27 @@ fieldset{
   align-items: center;
   margin: 40px;
   font-size: 4rem;
+  border: dotted white 3px;
+  padding: 10px;
+  padding-right: 5px;
+  padding-top: 5px;
 }
 button{
   padding: 10px;
-  font-size: 4rem;
+  font-size: 8rem;
   background: rgba(255, 255, 255, 0);
-  color: white;
+  color: rgba(255, 255, 255, 0.349);
   border: none;
-  margin-bottom: 10px;
+  line-height: 3rem;
+  margin-left: 10px;
+}
+button:hover{
+  color: rgb(198	100	0	);
+}
+form{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
 }
 h2{
   margin: 0px;
@@ -45,9 +58,13 @@ h2{
 }
 h3{
   font-size: 3rem;
+  color: rgba(255, 255, 255, 0.349);
+
+  
 }
 label{
   font-family: 'Space Mono', monospace;
+  font-size: 2rem;
 
 }
 
