@@ -78,17 +78,21 @@ function getNASA(){
                 facilities.wall.push(fac)
             }
         }
-        function showFacilities(){
-            let select = document.querySelector('select').value
-            let center = facilities[select]
-            list.innerHTML = ''
-            for (fac of center){
-              console.log(fac.facility)
-              let li = document.createElement('li')
-              li.appendChild(document.createTextNode(`${fac.facility}`))
-              list.appendChild(li)
+        // thank u chat GPT for suggesting the uniqueFacilities variable, stopped facilities from repeating
+        function showFacilities() {
+            let select = document.querySelector('select').value;
+            let center = facilities[select];
+            list.innerHTML = '';
+            let uniqueFacilities = new Set();
+            for (let fac of center) {
+              if (!uniqueFacilities.has(fac.facility)) {
+                let li = document.createElement('li');
+                li.appendChild(document.createTextNode(`${fac.facility}`));
+                list.appendChild(li);
+                uniqueFacilities.add(fac.facility);
+              }
             }
-        }          
+          }      
         console.log(facilities.god2)
         showFacilities()
         function getWeather(){
@@ -100,7 +104,12 @@ function getNASA(){
             .then(res => res.json()) // parse response as JSON
             .then(data => {
                 document.getElementById('temp').innerText = `${data.current.temp_f}	\xB0 F`
+                document.getElementById('cond').innerText = ` it\'s ${data.current.condition.text} `
+
                 console.log(data.current.temp_f, 'temp farenheit')
+                console.log(data.current, 'cond' )
+                console.log(data.current.condition.icon, 'cond' )
+
             })
             .catch(err => {
                 console.log(`error ${err}`)

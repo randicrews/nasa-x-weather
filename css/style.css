@@ -10,8 +10,50 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+*{ font-size: 62.5%;
+}
+body{
+  background: url("img/sky.jpg");
+  background-size: cover;
+  font-family: 'Space Mono', monospace;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
 
+}
+fieldset{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  font-size: 4rem;
+}
+button{
+  padding: 10px;
+  font-size: 4rem;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+  border: none;
+  margin-bottom: 10px;
+}
+h2{
+  margin: 0px;
+  font-size: 5rem;
+}
+h3{
+  font-size: 3rem;
+}
+label{
+  font-family: 'Space Mono', monospace;
 
+}
+
+aside{
+  color: rgba(255, 255, 255, 0.463);
+}
 
 /******************************************
 /* ADDITIONAL STYLES
