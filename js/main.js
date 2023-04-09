@@ -105,7 +105,7 @@ function getNASA(){
             .then(data => {
                 document.getElementById('temp').innerText = `${data.current.temp_f}	\xB0 F`
                 document.getElementById('cond').innerText = ` it\'s ${data.current.condition.text} `
-
+                document.querySelector('img').src = `https:${data.current.condition.icon}`
                 console.log(data.current.temp_f, 'temp farenheit')
                 console.log(data.current, 'cond' )
                 console.log(data.current.condition.icon, 'cond' )
